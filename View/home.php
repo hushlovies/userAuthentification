@@ -4,10 +4,10 @@
 <body>
     <h1>Welcome
         <?php
-        
-     
+
         if ( isset($alreadyExist)) {
-            echo $_POST['firstName'];
+            // echo $_POST['firstName'];
+            echo $_SESSION['user']->getfirstName();
         }else
         if (isset($user['email'])) {
             echo $user['firstName'];
@@ -32,4 +32,3 @@
 </body>
 
 </html>
-<!-- <?php var_dump($user) ?> -->

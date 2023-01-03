@@ -13,14 +13,29 @@ class User
     private $postalCode;
     private $city;
     private $country;
+    private $admin;
     public function __construct($data)
     {
         $this->hydrate($data);
+    }
+    public function getAdmin()
+    {
+        return $this->admin;
+    }
+    public function setAdmin($admin)
+    {
+        $this->admin = $admin;
+        return $admin;
     }
     //getId
     public function getId()
     {
         return $this->id;
+    }
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $id;
     }
     //getsetEmail
     public function getEmail()

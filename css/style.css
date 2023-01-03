@@ -94,4 +94,10 @@ a:hover {
 
 .menu {
   padding: 15px 32px;
+
+}
+
+.menu li {
+  list-style: none;
+
 }

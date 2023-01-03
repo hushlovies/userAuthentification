@@ -17,45 +17,45 @@ class userController
     }
     public function login()
     {
+        
         $page = 'login';
-        require_once('./View/login.php');
+        
+        require_once('./View/main.php');
     }
 
     public function doLogin()
     { // Appel de l'action
-
-
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = array(
                 'email' => $_POST["email"],
                 'password' => $_POST["password"],
             );
             $this->user = new User($data);
-            $result = $this->userManager->login($this->user); 
+            $result = $this->userManager->login($this->user);
             if ($result) {
                 $info = "Connexion reussie";
                 $user = $result;
-                
+                $this->user->hydrate($result);
+                $_SESSION['user'] = $this->user;
+
             } else {
                 $info = "Identifiants incorrects.";
             }
-            $page = 'home'; 
-            require_once('./View/home.php');
+            $page = 'home';
+            require_once('./View/main.php');
 
         }
     }
     public function register()
     {
         $page = 'register';
-        require_once('./View/register.php');
+        require_once('./View/main.php');
     }
     public function display()
     {
         $page = 'home';
-        require('./View/home.php');
+        require('./View/main.php');
     }
-
-
     public function doCreate()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -81,7 +81,7 @@ class userController
                 $page = 'create';
             }
         }
-        require_once('./View/home.php');
+        require_once('./View/main.php');
     }
 }
 
