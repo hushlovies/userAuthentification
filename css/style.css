@@ -1,0 +1,97 @@
+.bold {
+  font-weight: bold;
+}
+
+/*General*/
+body {
+  background-color: #f1f1f1;
+  min-height: 100%;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #000;
+  text-align: center;
+}
+
+#unauthorized_section {
+  margin-top: 115px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  width: 80%;
+  margin: 20px 10%;
+}
+
+/* Title */
+h1 {
+  font-family: 'Glegoo', serif;
+  font-size: 2em;
+}
+
+/* Form */
+form {
+  width: 70%;
+  margin: 0 15%;
+  text-align: center;
+}
+
+/* Buttons */
+.submit-btn {
+  width: 300px;
+}
+
+/*Footer*/
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: grey;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  padding-right: 20px;
+
+}
+
+/*Header*/
+.loginbar {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 30px;
+}
+
+ul {
+  padding-inline-start: 0px;
+}
+
+
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 15pt;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.button {
+  font-weight: bold;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.menu {
+  padding: 15px 32px;
+}
