@@ -95,9 +95,18 @@ a:hover {
 .menu {
   padding: 15px 32px;
 
+
 }
 
 .menu li {
   list-style: none;
+
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+  margin-left: 27%;
 
 }

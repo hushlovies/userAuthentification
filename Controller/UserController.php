@@ -1,11 +1,12 @@
 <?php
 
 class userController
-{ 
+{
 
     private $userManager;
     private $user;
-    
+    private $db;
+
 
     //creation constructeur pour appel connection et user
     public function __construct($db1)
@@ -17,9 +18,7 @@ class userController
     }
     public function login()
     {
-        
         $page = 'login';
-        
         require_once('./View/main.php');
     }
 
@@ -37,14 +36,19 @@ class userController
                 $user = $result;
                 $this->user->hydrate($result);
                 $_SESSION['user'] = $this->user;
-
             } else {
                 $info = "Identifiants incorrects.";
             }
             $page = 'home';
-            require_once('./View/main.php');
-
+            require('./View/main.php');
         }
+    }
+    public function doLogout()
+    { // Appel de l'action
+        unset($_SESSION['user']);
+        $page = 'home';
+        $info = "deconnexion reussi";
+        require_once('./View/main.php');
     }
     public function register()
     {
@@ -53,8 +57,23 @@ class userController
     }
     public function display()
     {
-        $page = 'home';
+        $page = 'test';
         require('./View/main.php');
+    }
+    public function listAllUsers()
+    {
+
+        $quer = $this->userManager->findAll();
+        $page = 'userlist';
+
+        require_once('./View/main.php');
+    }
+
+    public function unauthorized()
+    {
+
+        $page = 'unauthorized';
+        require_once('./View/main.php');
     }
     public function doCreate()
     {
@@ -71,18 +90,16 @@ class userController
             );
             $alreadyExist = $this->userManager->findByEmail($_POST['email']);
             if (!$alreadyExist) {
+
                 $user = new User($data);
                 $this->userManager->create($user);
-                
-                $info = "creation compte reussi!";
-                $page = 'login';
+
+                $info = "creation compte reussi! Veuillez login avec le nouveau compte";
             } else {
                 $info = "ERROR : This email (" . $_POST['email'] . ") is used by another user";
-                $page = 'create';
             }
         }
+        $page = 'home';
         require_once('./View/main.php');
     }
 }
-
-

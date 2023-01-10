@@ -51,8 +51,10 @@ class UserManager
         $req = $this->db->prepare(
             'SELECT * FROM users'
         );
+
         $req->execute();
-        return $req->fetchAll(PDO::FETCH_ASSOC);
+        $ret = $req->fetchAll(PDO::FETCH_ASSOC);
+        return $ret;
     }
     public final function findOne($id)
     {
@@ -68,7 +70,7 @@ class UserManager
     {
         $req = $this->db->prepare(
             ' SELECT users
-        FROM users WHERE email='.$email
+        FROM users WHERE email=' . $email
         );
         $req->execute();
         return $req->fetch();

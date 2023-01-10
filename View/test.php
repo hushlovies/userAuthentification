@@ -15,14 +15,17 @@
 <body>
     <header>
         <div class="loginbar">
-            <a class="button" href="index.php?ctrl=user&action=login">Login </a>
+            <a class="button" href="index.php?ctrl=user&action=login">Login</a>
             <a class="button" href="index.php?ctrl=user&action=register"> Register</a>
         </div>
-        <ul class="menu"><a href="index.php">Home</a>
-            <!-- <a href="#">Liste des utilisateurs</a> -->
+
+        <!-- <a href="#">Liste des utilisateurs</a> -->
         </ul>
     </header>
     <hr />
+    <h1>Authentification utilisateur</h1>
+    <img src="./img/merry_christmas_background_leaves_flat_01.jpg" alt="merry-xmas_happy-new-year" width="600px" height="300px">
+
 </body>
 
 </html>
